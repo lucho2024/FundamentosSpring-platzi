@@ -19,7 +19,7 @@ public class User {
     @Column(length = 50)
     private String name;
 
-    @Column(length = 50)
+    @Column(length = 50,unique = true)
     private String email;
 
 
@@ -40,6 +40,12 @@ public class User {
         this.email = email;
         this.birthDate = birthDate;
         this.posts = posts;
+    }
+
+    public User(String name, String email, LocalDate birthDate) {
+        this.name = name;
+        this.email = email;
+        this.birthDate = birthDate;
     }
 
     public Long getId() {
